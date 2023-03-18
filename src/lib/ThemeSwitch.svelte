@@ -1,12 +1,14 @@
 <script lang="ts">
 	import { theme } from '$lib/stores';
-	import SegmentedButton, { Segment, Icon } from '@smui/segmented-button';
+	import IconButton, { Icon } from '@smui/icon-button';
 
-	const themes = ['light', 'auto', 'dark'];
+	const nextTheme: Map<string, string> = new Map([
+		['auto', 'dark'],
+		['dark', 'light'],
+		['light', 'auto']
+	]);
 </script>
 
-<SegmentedButton segments={themes} let:segment singleSelect bind:selected={$theme}>
-	<Segment {segment} title={`${segment.charAt(0).toUpperCase()}${segment.slice(1)} Theme`}>
-		<Icon class="material-symbols-outlined">{`${segment}_mode`}</Icon>
-	</Segment>
-</SegmentedButton>
+<IconButton on:click={() => ($theme = nextTheme.get($theme) || 'auto')} title="Change theme">
+	<Icon class="material-symbols-outlined">{`${$theme}_mode`}</Icon>
+</IconButton>

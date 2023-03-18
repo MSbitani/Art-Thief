@@ -1,5 +1,6 @@
-import { writable } from 'svelte/store'
+import { browser } from '$app/environment';
+import { writable } from 'svelte/store';
 
-const theme = writable('auto')
+export const theme = writable(browser ? window.localStorage.getItem('theme') ?? 'auto' : 'auto');
 
-export { theme }
+theme.subscribe((setTheme) => { if (browser) window.localStorage.setItem('theme', setTheme) });
