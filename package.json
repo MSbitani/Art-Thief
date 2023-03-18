@@ -16,7 +16,7 @@
 	},
 	"devDependencies": {
 		"@smui-extra/bottom-app-bar": "^7.0.0-beta.0",
-		"@smui/segmented-button": "^7.0.0-beta.0",
+		"@smui/icon-button": "^7.0.0-beta.0",
 		"@smui/tab": "^7.0.0-beta.0",
 		"@smui/tab-bar": "^7.0.0-beta.0",
 		"@smui/top-app-bar": "^7.0.0-beta.0",
@@ -34,7 +34,7 @@
 		"svelte-adapter-firebase": "^0.15.0",
 		"svelte-check": "^3.0.1",
 		"tslib": "^2.4.1",
-		"typescript": "^4.9.3",
+		"typescript": "^5.0.2",
 		"vite": "^4.0.0"
 	},
 	"type": "module"
